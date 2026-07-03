@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
@@ -7,10 +7,10 @@ import { SectionLabel } from '@/components/ui/Elements'
 import { Send, Github, Linkedin, Twitter, Mail, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react'
 
 const socialLinks = [
-  { icon: <Github size={18} />, label: 'GitHub', href: '#', handle: '@amfahhjawad' },
+  { icon: <Github size={18} />, label: 'GitHub', href: 'https://github.com/ari161-bit', handle: '@ari161-bit' },
   { icon: <Linkedin size={18} />, label: 'LinkedIn', href: 'https://linkedin.com/in/amfahh-jawad', handle: 'Amfahh Jawad' },
-  { icon: <Twitter size={18} />, label: 'Twitter/X', href: '#', handle: '@amfahhjawad' },
-  { icon: <Mail size={18} />, label: 'Email', href: 'mailto:hello@example.com', handle: 'hello@example.com' },
+  { icon: <Twitter size={18} />, label: 'Twitter/X', href: 'https://github.com/ari161-bit', handle: '@ari161-bit' },
+  { icon: <Mail size={18} />, label: 'Email', href: 'mailto:amfahhjd161@gmail.com', handle: 'amfahhjd161@gmail.com' },
 ]
 
 export default function Contact() {
@@ -207,3 +207,4 @@ export default function Contact() {
     </section>
   )
 }
+

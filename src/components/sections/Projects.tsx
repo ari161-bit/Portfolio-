@@ -1,122 +1,110 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 import { SectionLabel } from '@/components/ui/Elements'
-import { ExternalLink, Zap, Shield, TrendingDown, Globe, Sparkles, GitBranch } from 'lucide-react'
+import { ExternalLink, Zap, Shield, TrendingDown, Globe, Sparkles, GitBranch, FileText } from 'lucide-react'
 
 const projects = [
   {
     id: 'apex-os',
     name: 'Apex OS',
     tagline: 'AI-Powered Productivity Workspace',
-    description:
-      'Transform goals, files, and study materials into structured roadmaps, workflows, and actionable plans with AI at its core.',
+    description: 'Transform goals, files, and study materials into structured roadmaps, workflows, and actionable plans with AI at its core.',
     status: 'Live',
+    year: '2026',
     statusColor: '#10b981',
     gradient: 'from-purple-600/30 via-purple-500/10 to-transparent',
     accentColor: '#8b5cf6',
-    icon: <Sparkles size={20} className="text-purple-400" />,
+    url: 'https://axon-two-sable.vercel.app',
     tags: ['Next.js', 'AI Planning', 'Firebase', 'Supabase'],
     features: [
-      { icon: <Zap size={12} />, label: 'AI Planning Engine' },
-      { icon: <Shield size={12} />, label: 'Authentication' },
-      { icon: <Globe size={12} />, label: 'Cloud Infrastructure' },
-      { icon: <GitBranch size={12} />, label: 'Smart Roadmaps' },
+      { label: 'AI Planning Engine' },
+      { label: 'Authentication' },
+      { label: 'Cloud Infrastructure' },
+      { label: 'Smart Roadmaps' },
     ],
-    mockup: {
-      type: 'dashboard',
-      lines: [
-        { w: '70%', color: '#8b5cf6' },
-        { w: '50%', color: '#6d28d9' },
-        { w: '85%', color: '#7c3aed' },
-        { w: '40%', color: '#8b5cf6' },
-      ],
-    },
+    mockup: { lines: [{ w: '70%', color: '#8b5cf6' },{ w: '50%', color: '#6d28d9' },{ w: '85%', color: '#7c3aed' },{ w: '40%', color: '#8b5cf6' }] },
+  },
+  {
+    id: 'invoiceflow',
+    name: 'InvoiceFlow',
+    tagline: 'Beautiful Invoices in Seconds',
+    description: 'A polished, real-time invoice generator built with Next.js 14 + Tailwind CSS. Ship it in a day. Start charging on day two.',
+    status: 'Live',
+    year: '2026',
+    statusColor: '#10b981',
+    gradient: 'from-cyan-600/30 via-cyan-500/10 to-transparent',
+    accentColor: '#06b6d4',
+    url: 'https://inventory-ruby-chi.vercel.app/',
+    tags: ['Next.js 14', 'Tailwind CSS', 'Real-time', 'PDF'],
+    features: [
+      { label: 'Real-time Preview' },
+      { label: 'PDF Export' },
+      { label: 'Instant Deploy' },
+      { label: 'Client Ready' },
+    ],
+    mockup: { lines: [{ w: '75%', color: '#06b6d4' },{ w: '55%', color: '#0891b2' },{ w: '90%', color: '#06b6d4' },{ w: '45%', color: '#0e7490' }] },
   },
   {
     id: 'aquarius-os',
     name: 'Aquarius OS',
     tagline: 'Modular Automation Ecosystem',
-    description:
-      'A modular software ecosystem with intelligent automation, secure vault storage, and workflow orchestration built for scale.',
-    status: 'In Development',
-    statusColor: '#f59e0b',
+    description: 'A modular software ecosystem with intelligent automation, secure vault storage, and workflow orchestration built for scale.',
+    status: 'Live',
+    year: '2026',
+    statusColor: '#10b981',
     gradient: 'from-blue-600/30 via-blue-500/10 to-transparent',
     accentColor: '#3b82f6',
-    icon: <Shield size={20} className="text-blue-400" />,
+    url: 'https://aquarious-os.vercel.app/',
     tags: ['Python', 'FastAPI', 'Automation', 'Cloud'],
     features: [
-      { icon: <Shield size={12} />, label: 'Vault Protocol' },
-      { icon: <Zap size={12} />, label: 'Resolver Engine' },
-      { icon: <GitBranch size={12} />, label: 'Workflow Orchestration' },
-      { icon: <Globe size={12} />, label: 'Cloud Architecture' },
+      { label: 'Vault Protocol' },
+      { label: 'Resolver Engine' },
+      { label: 'Workflow Orchestration' },
+      { label: 'Cloud Architecture' },
     ],
-    mockup: {
-      type: 'terminal',
-      lines: [
-        { w: '60%', color: '#3b82f6' },
-        { w: '80%', color: '#2563eb' },
-        { w: '45%', color: '#3b82f6' },
-        { w: '70%', color: '#1d4ed8' },
-      ],
-    },
+    mockup: { lines: [{ w: '60%', color: '#3b82f6' },{ w: '80%', color: '#2563eb' },{ w: '45%', color: '#3b82f6' },{ w: '70%', color: '#1d4ed8' }] },
   },
   {
     id: 'feekiller',
     name: 'FeeKiller.ai',
     tagline: 'Slash Your Delivery Costs with AI',
-    description:
-      'Consumer-focused platform that analyzes and reduces food delivery costs through intelligent financial optimization.',
+    description: 'Consumer-focused platform that analyzes and reduces food delivery costs through intelligent financial optimization.',
     status: 'Live',
+    year: '2026',
     statusColor: '#10b981',
     gradient: 'from-emerald-600/30 via-emerald-500/10 to-transparent',
     accentColor: '#10b981',
-    icon: <TrendingDown size={20} className="text-emerald-400" />,
+    url: 'https://trillionaire-sim.vercel.app/',
     tags: ['Next.js', 'AI', 'FinTech', 'APIs'],
     features: [
-      { icon: <TrendingDown size={12} />, label: 'Cost Analysis' },
-      { icon: <Zap size={12} />, label: 'AI Optimization' },
-      { icon: <Globe size={12} />, label: 'API Integrations' },
-      { icon: <Shield size={12} />, label: 'Secure Data' },
+      { label: 'Cost Analysis' },
+      { label: 'AI Optimization' },
+      { label: 'API Integrations' },
+      { label: 'Secure Data' },
     ],
-    mockup: {
-      type: 'analytics',
-      lines: [
-        { w: '55%', color: '#10b981' },
-        { w: '90%', color: '#059669' },
-        { w: '35%', color: '#10b981' },
-        { w: '75%', color: '#047857' },
-      ],
-    },
+    mockup: { lines: [{ w: '55%', color: '#10b981' },{ w: '90%', color: '#059669' },{ w: '35%', color: '#10b981' },{ w: '75%', color: '#047857' }] },
   },
   {
     id: 'afai',
     name: 'AFAI Project',
     tagline: 'Enterprise Full-Stack Platform',
-    description:
-      'Full-stack platform built with Django, Firebase, and Google Cloud infrastructure — designed for enterprise-grade reliability.',
+    description: 'Full-stack platform built with Django, Firebase, and Google Cloud infrastructure designed for enterprise-grade reliability.',
     status: 'Shipped',
+    year: '2026',
     statusColor: '#a78bfa',
     gradient: 'from-orange-600/20 via-orange-500/10 to-transparent',
     accentColor: '#f97316',
-    icon: <Globe size={20} className="text-orange-400" />,
+    url: '#',
     tags: ['Django', 'Firebase', 'GCP', 'Full-Stack'],
     features: [
-      { icon: <Globe size={12} />, label: 'Google Cloud' },
-      { icon: <Shield size={12} />, label: 'Firebase Auth' },
-      { icon: <GitBranch size={12} />, label: 'Django Backend' },
-      { icon: <Zap size={12} />, label: 'Cloud Functions' },
+      { label: 'Google Cloud' },
+      { label: 'Firebase Auth' },
+      { label: 'Django Backend' },
+      { label: 'Cloud Functions' },
     ],
-    mockup: {
-      type: 'api',
-      lines: [
-        { w: '65%', color: '#f97316' },
-        { w: '45%', color: '#ea580c' },
-        { w: '80%', color: '#f97316' },
-        { w: '55%', color: '#c2410c' },
-      ],
-    },
+    mockup: { lines: [{ w: '65%', color: '#f97316' },{ w: '45%', color: '#ea580c' },{ w: '80%', color: '#f97316' },{ w: '55%', color: '#c2410c' }] },
   },
 ]
 
@@ -131,94 +119,55 @@ function ProjectCard({ project, index, isVisible }: { project: typeof projects[0
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: index * 0.1, duration: 0.6 }}
       >
-        {/* Background gradient */}
         <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-60`} />
-
-        {/* Glow orb */}
-        <div
-          className="absolute top-[-20px] left-[-20px] w-40 h-40 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"
-          style={{ background: project.accentColor }}
-        />
-
+        <div className="absolute top-[-20px] left-[-20px] w-40 h-40 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" style={{ background: project.accentColor }} />
         <div className="relative z-10 p-8 md:p-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
-            {/* Left: Content */}
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                  {project.icon}
-                </div>
-                <div
-                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
-                  style={{
-                    background: `${project.statusColor}20`,
-                    color: project.statusColor,
-                    border: `1px solid ${project.statusColor}30`,
-                  }}
-                >
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold" style={{ background: `${project.statusColor}20`, color: project.statusColor, border: `1px solid ${project.statusColor}30` }}>
                   <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: project.statusColor }} />
                   {project.status}
                 </div>
+                <span className="text-xs text-white/30 font-mono">{project.year}</span>
               </div>
-
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{project.name}</h3>
               <p className="text-sm font-medium mb-4" style={{ color: project.accentColor }}>{project.tagline}</p>
               <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-md">{project.description}</p>
-
-              {/* Features */}
               <div className="grid grid-cols-2 gap-2 mb-6">
                 {project.features.map((f, i) => (
                   <div key={i} className="flex items-center gap-2 text-xs text-white/40">
-                    <span style={{ color: project.accentColor }}>{f.icon}</span>
+                    <span className="w-1 h-1 rounded-full" style={{ background: project.accentColor }} />
                     {f.label}
                   </div>
                 ))}
               </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 rounded-lg text-xs font-medium"
-                    style={{
-                      background: `${project.accentColor}10`,
-                      color: project.accentColor,
-                      border: `1px solid ${project.accentColor}20`,
-                    }}
-                  >
-                    {tag}
-                  </span>
+                  <span key={i} className="px-3 py-1 rounded-lg text-xs font-medium" style={{ background: `${project.accentColor}10`, color: project.accentColor, border: `1px solid ${project.accentColor}20` }}>{tag}</span>
                 ))}
               </div>
+              {project.url !== '#' && (
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5" style={{ background: `${project.accentColor}20`, color: project.accentColor, border: `1px solid ${project.accentColor}30` }}>
+                  View Live →
+                </a>
+              )}
             </div>
-
-            {/* Right: Mockup */}
             <div className="w-full md:w-64 flex-shrink-0">
               <div className="rounded-xl bg-[#070710] border border-white/[0.06] p-4 font-mono text-xs">
-                {/* Window chrome */}
                 <div className="flex items-center gap-1.5 mb-4">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
                   <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
                   <div className="flex-1 text-center text-white/20 text-[10px]">{project.id}.app</div>
                 </div>
-                {/* Mock content lines */}
                 <div className="space-y-2.5">
                   {project.mockup.lines.map((line, i) => (
-                    <motion.div
-                      key={i}
-                      className="h-2 rounded-full"
-                      style={{ width: line.w, background: `linear-gradient(90deg, ${line.color}60, ${line.color}20)` }}
-                      initial={{ width: 0 }}
-                      animate={isVisible ? { width: line.w } : {}}
-                      transition={{ delay: 0.5 + i * 0.1, duration: 0.6 }}
-                    />
+                    <motion.div key={i} className="h-2 rounded-full" style={{ width: line.w, background: `linear-gradient(90deg, ${line.color}60, ${line.color}20)` }} initial={{ width: 0 }} animate={isVisible ? { width: line.w } : {}} transition={{ delay: 0.5 + i * 0.1, duration: 0.6 }} />
                   ))}
                 </div>
-                {/* Simulated data */}
                 <div className="mt-4 pt-4 border-t border-white/[0.04] space-y-1.5">
-                  {['status: active', 'env: production', 'uptime: 99.9%'].map((line, i) => (
+                  {['status: active', 'env: production', 'year: 2026'].map((line, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <span className="text-white/20">›</span>
                       <span style={{ color: `${project.accentColor}80` }}>{line}</span>
@@ -240,46 +189,33 @@ function ProjectCard({ project, index, isVisible }: { project: typeof projects[0
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.6 }}
     >
-      {/* Gradient */}
       <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50`} />
-
       <div className="relative z-10 p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/[0.08] flex items-center justify-center">
-            {project.icon}
+            <div className="w-2 h-2 rounded-full" style={{ background: project.accentColor }} />
           </div>
-          <div
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold"
-            style={{
-              background: `${project.statusColor}20`,
-              color: project.statusColor,
-              border: `1px solid ${project.statusColor}30`,
-            }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: project.statusColor }} />
-            {project.status}
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] text-white/25 font-mono">{project.year}</span>
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold" style={{ background: `${project.statusColor}20`, color: project.statusColor, border: `1px solid ${project.statusColor}30` }}>
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: project.statusColor }} />
+              {project.status}
+            </div>
           </div>
         </div>
-
         <h3 className="text-lg font-bold text-white mb-1">{project.name}</h3>
         <p className="text-xs font-medium mb-3" style={{ color: project.accentColor }}>{project.tagline}</p>
         <p className="text-white/45 text-sm leading-relaxed mb-5">{project.description}</p>
-
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5 mb-4">
           {project.tags.map((tag, i) => (
-            <span
-              key={i}
-              className="px-2 py-0.5 rounded-md text-[10px] font-medium"
-              style={{
-                background: `${project.accentColor}10`,
-                color: project.accentColor,
-                border: `1px solid ${project.accentColor}20`,
-              }}
-            >
-              {tag}
-            </span>
+            <span key={i} className="px-2 py-0.5 rounded-md text-[10px] font-medium" style={{ background: `${project.accentColor}10`, color: project.accentColor, border: `1px solid ${project.accentColor}20` }}>{tag}</span>
           ))}
         </div>
+        {project.url !== '#' && (
+          <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-medium transition-all duration-200 hover:gap-2" style={{ color: project.accentColor }}>
+            View Live →
+          </a>
+        )}
       </div>
     </motion.div>
   )
@@ -287,28 +223,17 @@ function ProjectCard({ project, index, isVisible }: { project: typeof projects[0
 
 export default function Projects() {
   const { ref, isVisible } = useScrollAnimation(0.05)
-
   return (
     <section id="projects" className="relative py-24 md:py-32 px-4" ref={ref}>
       <div className="max-w-5xl mx-auto">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
           <SectionLabel>Featured Work</SectionLabel>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Products I&apos;ve{' '}
-            <span style={{ background: 'linear-gradient(135deg, #a78bfa, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              shipped
-            </span>
+            <span style={{ background: 'linear-gradient(135deg, #a78bfa, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>shipped</span>
           </h2>
-          <p className="text-white/40 text-base max-w-lg mx-auto">
-            Real products, real problems solved. Each one built from scratch and deployed to production.
-          </p>
+          <p className="text-white/40 text-base max-w-lg mx-auto">Real products, real problems solved. All built and deployed in 2026.</p>
         </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} isVisible={isVisible} />
